@@ -40,7 +40,12 @@ def GraphMethodeXXX(min, max):
     x = []
     for k in range(min, max+1):
         x.append(k)
-    y = MethodeSerieInvCarres(x)
-    plt.plot(x, y)
+        y1 = MethodeSerieInvCarres(k)
+        y2 = MethodeSerieInvCarresImpairs(k)
+    return y1, y2
+    plt.plot(x, y1)
+    plt.plot(x, y2)
     plt.show()
 
+
+GraphMethodeXXX(1, 6)
