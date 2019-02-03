@@ -1,4 +1,4 @@
-### DIEVAL Corentin Rey Thibaud
+### DIEVAL Corentin REY Thibaud
 ### Pi approximation
 
 # Imports
@@ -81,4 +81,4 @@ def monte_carlo(n):
     ax.grid(True)
 
     plt.show()
-    return k/n
+    return 4*k/n
