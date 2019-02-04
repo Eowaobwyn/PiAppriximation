@@ -40,6 +40,17 @@ def MethodeSerieInvCarresImpairs(N):
     s = SerieInvCarresImpairs(N)
     return math.sqrt(8 * s)
 
+def InvCarres():
+    n = 1
+    while math.fabs(MethodeSerieInvCarres(n)-math.pi)>10**(-4):
+        n+=1
+    return n
+
+def InvCarresImpairs():
+    n = 1
+    while math.fabs(MethodeSerieInvCarresImpairs(n)-math.pi)>10**(-4):
+        n+=1
+    return n
 
 # 5.
 # Representation de deux graphes : |MethodeSerieXXX(N) - PI|
