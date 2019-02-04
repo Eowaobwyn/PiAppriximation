@@ -52,7 +52,8 @@ def graph_method_xxx(min, max):
         y1.append(MethodeSerieInvCarres(k))
         y2.append(MethodeSerieInvCarresImpairs(k))
 
-    plt.plot(x, y1, y2)
+    plt.plot(x, y1, color='red')
+    plt.plot(x, y2, color='blue')
     plt.show()
 
 
@@ -63,8 +64,8 @@ def method_serie_ramanujan(n):
     return ((2 * math.sqrt(2) / 9801) * S) ** (-1)
 
 
-def monte_carlo(n):
-    fig, ax = plt.subplots()
+def monte_carlo_plot(n):
+    # fig, ax = plt.subplots()
     k = 0
 
     for i in range(1, n + 1):
@@ -75,10 +76,30 @@ def monte_carlo(n):
             color = 'green'
             k += 1
 
-        ax.scatter(x, y, c=color, s=10, label=color, alpha=1, edgecolors='none')
+        # ax.scatter(x, y, c=color, s=10, label=color, alpha=1, edgecolors='none')
 
-    # ax.legend()
-    ax.grid(True)
+    # ax.grid(True)
 
-    plt.show()
+    # plt.draw()
     return 4*k/n
+
+def monte_carlo(n):
+    k = 0
+
+    for i in range(1, n + 1):
+        x, y = random(), random()
+        if (x ** 2) + (y ** 2) <= 1:
+            k += 1
+
+    return 4*k/n
+
+def graph_monte_carlo(n):
+    x = []
+    y = []
+
+    for i in range(1, n+1):
+        x.append(i)
+        y.append(math.fabs(monte_carlo(i) - math.pi))
+
+    plt.scatter(x, y, s=1)
+    plt.show()
