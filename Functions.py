@@ -114,3 +114,12 @@ def graph_monte_carlo(n):
 
     plt.scatter(x, y, s=1)
     plt.show()
+
+def wallis(n):
+    halfpi = 1.0
+
+    for i in range(1, n):
+        numer = i * 2
+        denom = i * 2 - 1
+        halfpi = halfpi * (numer * numer) / (denom * (denom + 2))
+    print(2 * halfpi)
